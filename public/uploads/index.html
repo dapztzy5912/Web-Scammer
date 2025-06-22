@@ -1,11 +1,242 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIST SCAMMER/PENIPUAN</title>
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    :root {
+    --primary-color: #121212;
+    --secondary-color: #1e1e1e;
+    --accent-color: #ffffff;
+    --text-color: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --danger-color: #ff4444;
+    --success-color: #00c851;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.description {
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+.add-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.add-btn:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+.scammer-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.scammer-card {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.scammer-card:hover {
+    transform: translateY(-5px);
+}
+
+.scammer-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.scammer-images img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.scammer-info {
+    padding: 1.5rem;
+}
+
+.scammer-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.scam-type {
+    display: inline-block;
+    background-color: rgba(255, 68, 68, 0.2);
+    color: var(--danger-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.scammer-details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.scammer-details a {
+    color: #4dabf7;
+    text-decoration: none;
+}
+
+.scammer-details a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #cc0000;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .scammer-list {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+}
+    </style>
 </head>
 <body>
     <div class="container">
@@ -69,6 +300,110 @@
         <p>Web By XdpzQ</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const addScammerBtn = document.getElementById('addScammerBtn');
+    const scammerModal = document.getElementById('scammerModal');
+    const closeBtn = document.querySelector('.close-btn');
+    const scammerForm = document.getElementById('scammerForm');
+    const scammerList = document.getElementById('scammerList');
+    
+    // Load scammer data when page loads
+    loadScammers();
+    
+    // Modal controls
+    addScammerBtn.addEventListener('click', () => {
+        scammerModal.style.display = 'block';
+    });
+    
+    closeBtn.addEventListener('click', () => {
+        scammerModal.style.display = 'none';
+    });
+    
+    window.addEventListener('click', (e) => {
+        if (e.target === scammerModal) {
+            scammerModal.style.display = 'none';
+        }
+    });
+    
+    // Form submission
+    scammerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('/api/scammers', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Scammer berhasil ditambahkan!');
+                scammerForm.reset();
+                scammerModal.style.display = 'none';
+                loadScammers();
+            } else {
+                alert('Gagal menambahkan scammer: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Terjadi kesalahan saat mengirim data');
+        });
+    });
+    
+    // Function to load scammer list
+    function loadScammers() {
+        fetch('/api/scammers')
+            .then(response => response.json())
+            .then(data => {
+                scammerList.innerHTML = '';
+                
+                if (data.length === 0) {
+                    scammerList.innerHTML = '<p class="no-data">Belum ada data scammer</p>';
+                    return;
+                }
+                
+                data.forEach(scammer => {
+                    const scammerCard = document.createElement('div');
+                    scammerCard.className = 'scammer-card';
+                    
+                    let imagesHTML = '';
+                    if (scammer.proofImages && scammer.proofImages.length > 0) {
+                        imagesHTML = `<div class="scammer-images">`;
+                        scammer.proofImages.forEach(img => {
+                            imagesHTML += `<img src="/uploads/${img}" alt="Bukti ${scammer.name}">`;
+                        });
+                        imagesHTML += `</div>`;
+                    }
+                    
+                    let phoneHTML = scammer.phoneNumber ? `<p><strong>Nomor:</strong> ${scammer.phoneNumber}</p>` : '';
+                    let websiteHTML = scammer.websiteUrl ? `<p><strong>Website:</strong> <a href="${scammer.websiteUrl}" target="_blank">${scammer.websiteUrl}</a></p>` : '';
+                    let descHTML = scammer.description ? `<p><strong>Deskripsi:</strong> ${scammer.description}</p>` : '';
+                    
+                    scammerCard.innerHTML = `
+                        ${imagesHTML}
+                        <div class="scammer-info">
+                            <h3>${scammer.name}</h3>
+                            <span class="scam-type">${scammer.scamType}</span>
+                            <div class="scammer-details">
+                                ${phoneHTML}
+                                ${websiteHTML}
+                                ${descHTML}
+                            </div>
+                        </div>
+                    `;
+                    
+                    scammerList.appendChild(scammerCard);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading scammers:', error);
+                scammerList.innerHTML = '<p class="error">Gagal memuat data scammer</p>';
+            });
+    }
+});
+    </script>
 </body>
 </html>
