@@ -1,0 +1,74 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIST SCAMMER/PENIPUAN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LIST SCAMMER/PENIPUAN</h1>
+            <p class="description">
+                Website ini dibuat untuk membantu masyarakat mengenali dan menghindari penipuan online. 
+                Kamu bisa berkontribusi dengan menambahkan informasi scammer yang kamu ketahui 
+                melalui tombol "Tambah Scammer" di bawah ini.
+            </p>
+            <button id="addScammerBtn" class="add-btn">+ Tambah Scammer</button>
+        </header>
+
+        <div class="scammer-list" id="scammerList">
+            <!-- List scammer akan dimuat di sini -->
+        </div>
+
+        <div class="modal" id="scammerModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Tambah Scammer Baru</h2>
+                <form id="scammerForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="scammerName">Nama Scammer*</label>
+                        <input type="text" id="scammerName" name="scammerName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="scamType">Jenis Penipuan*</label>
+                        <input type="text" id="scamType" name="scamType" placeholder="Contoh: Penipuan online shop, investasi bodong, dll" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phoneNumber">Nomor Telepon (opsional)</label>
+                        <input type="text" id="phoneNumber" name="phoneNumber">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="websiteUrl">Link Website (opsional)</label>
+                        <input type="url" id="websiteUrl" name="websiteUrl">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Deskripsi (opsional)</label>
+                        <textarea id="description" name="description" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="proofImages">Bukti Foto (maksimal 6)*</label>
+                        <input type="file" id="proofImages" name="proofImages" multiple accept="image/*" required>
+                        <small>Unggah foto bukti penipuan (maksimal 6 file)</small>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Web By XdpzQ</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
